@@ -53,6 +53,14 @@ To generate a new library, use:
 npx nx g @nx/react:lib mylib
 ```
 
+To add a Shadcn component, use:
+
+```sh
+$env:TS_NODE_PROJECT = "tsconfig.base.json"; npx shadcn@latest add <component-name>
+```
+In a new shell
+**_💡 Note:_** Since we're in a monorepo, we have to specify TS_NODE_PROJECT to point to the tsconfig.base.json file. Shadcn UI will look for tsconfig.json by default, but that is not available in the monorepo root.
+
 You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
 
 [Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
