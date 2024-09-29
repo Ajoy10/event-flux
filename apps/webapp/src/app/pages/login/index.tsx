@@ -20,7 +20,11 @@ export default function LoginPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Button>Sign in with google</Button>
+          <Button asChild>
+            <Link to={'http://localhost:3000' + '/auth/google'}>
+              Sign in with google
+            </Link>
+          </Button>
         </CardContent>
       </Card>
     </div>
