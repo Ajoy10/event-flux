@@ -1,7 +1,9 @@
 import router from './routes';
-import { setup } from './services';
+import { setup } from './controllers';
 
-export const Auth = {
+const Auth = {
   router,
   setup,
 };
+
+export default Auth;

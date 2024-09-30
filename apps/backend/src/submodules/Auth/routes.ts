@@ -18,12 +18,15 @@ router.get(
   }),
   (req, res) => {
     console.log('Success');
-    res.redirect('/auth/google/success');
+
+    // TODO: Handle redirect properly
+    // res.redirect('/auth/google/success');
   }
 );
 
 router.get('/google/success', (req, res) => {
-  res.send('Successfull login');
+  res.redirect('http://localhost:4200');
+  // .send(`Successfull login ${JSON.stringify(req.user)}`);
 });
 
 router.get('/google/failure', (req, res) => {
