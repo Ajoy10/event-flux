@@ -4,6 +4,7 @@ dotenv.config();
 import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
+import cors from 'cors';
 
 import morgan from 'morgan';
 
@@ -17,6 +18,13 @@ const app = express();
 
 // set up morgan middleware
 app.use(morgan('tiny'));
+
+app.use(
+  cors({
+    credentials: true,
+    origin: ['http://localhost:4200'],
+  })
+);
 
 // Auth setup
 
