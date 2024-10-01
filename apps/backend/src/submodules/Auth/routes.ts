@@ -3,11 +3,28 @@ import passport from 'passport';
 
 const router = Router();
 
+router.get('/verify', (req, res) => {
+  if (req.user) {
+    res.status(200).json({ user: req.user });
+  } else {
+    res.send(401).send();
+  }
+});
+
+router.delete('/logout', (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    return res.json(true);
+  });
+});
+
 router.get(
   '/google',
   passport.authenticate('google', {
     scope: ['email', 'profile'],
-    //Todo: type(?): offline for refresh token
+    // TODO: type(?): offline for refresh token
   })
 );
 
@@ -20,7 +37,7 @@ router.get(
     console.log('Success');
 
     // TODO: Handle redirect properly
-    // res.redirect('/auth/google/success');
+    res.redirect('/auth/google/success');
   }
 );
 
