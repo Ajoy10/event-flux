@@ -5,10 +5,20 @@
   "projectType": "application",
   "tags": [],
   "targets": {
+    "prismaGenerate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx prisma generate --schema apps/backend/prisma/schema.prisma"
+        ],
+        "parallel": false
+      }
+    },
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
+      "dependsOn": ["prismaGenerate"],
       "options": {
         "platform": "node",
         "outputPath": "dist/apps/backend",
