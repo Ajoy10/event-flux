@@ -60,6 +60,9 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "prismaGenerate": {
+      "cache": false
     }
   },
   "generators": {
