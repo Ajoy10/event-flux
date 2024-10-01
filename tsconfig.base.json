@@ -15,10 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@event-flux/styles/*": ["libs/ui/src/styles/*"],
+      "@event-flux/types": ["libs/types/src/index.ts"],
       "@event-flux/ui": ["libs/ui/src/ui/"],
       "@event-flux/ui/*": ["libs/ui/src/ui/*"],
-      "@event-flux/utils": ["libs/utils/src/index.ts"],
-      "@event-flux/styles/*": ["libs/ui/src/styles/*"]
+      "@event-flux/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
