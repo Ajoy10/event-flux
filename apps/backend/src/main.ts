@@ -8,8 +8,8 @@ import cors from 'cors';
 
 import morgan from 'morgan';
 
-// import router from './routes';
 import Auth from './submodules/Auth';
+import router from './routes';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
@@ -40,7 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 Auth.setup(process.env.GOOGLE_AUTH_CLIENT_ID, process.env.GOOGLE_AUTH_SECRET);
 
-app.use('/auth', Auth.router); // Todo: Change it to routes/index.ts
+app.use('/', router);
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
