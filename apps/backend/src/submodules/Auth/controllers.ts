@@ -7,11 +7,13 @@ import User from '../User';
 
 export function setup(clientID: string, clientSecret: string) {
   passport.serializeUser((user: GoogleProfile, done) => {
-    console.log('User', user.id);
+    console.log('User');
+    console.log(user);
     done(null, user);
   });
 
   passport.deserializeUser((id, done) => {
+    console.log('Deserialized User, ');
     console.log(id);
     done(null, id);
   });

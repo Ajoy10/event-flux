@@ -1,14 +1,11 @@
 import { Router } from 'express';
 import passport from 'passport';
+import { protectedRoute } from './middlewares';
 
 const router = Router();
 
-router.get('/verify', (req, res) => {
-  if (req.user) {
-    res.status(200).json({ user: req.user });
-  } else {
-    res.send(401).send();
-  }
+router.get('/verify', protectedRoute, (req, res) => {
+  res.status(200).json({ user: req.user });
 });
 
 router.delete('/logout', (req, res, next) => {
