@@ -34,6 +34,8 @@ jobs:
 
       # Generates the data types with prisma generate
       - run: NX_CLOUD_DISTRIBUTED_EXECUTION=false npx nx run prisma-schema-v1:generate-types
+      # Ensure Prisma client files are generated
+      - run: ls -R ./node_modules/.prisma
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
