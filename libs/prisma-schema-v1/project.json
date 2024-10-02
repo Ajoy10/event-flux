@@ -5,6 +5,9 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "build": {
+      "command": "npx prisma generate"
+    },
     "prisma": {
       "command": "prisma",
       "options": {
