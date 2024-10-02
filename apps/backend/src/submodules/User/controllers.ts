@@ -1,4 +1,4 @@
-import { Prisma, User as UserModel } from '@prisma/client';
+import { Prisma, User as UserModel } from '@event-flux/prisma-client-v1';
 import { db } from '../Database';
 
 export async function findOrCreateUser(
