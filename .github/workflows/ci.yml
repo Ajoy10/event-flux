@@ -33,7 +33,7 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       # Generates the data types with prisma generate
-      - run: npx nx run prisma-schema-v1:generate-types
+      - run: NX_CLOUD_DISTRIBUTED_EXECUTION=false npx nx run prisma-schema-v1:generate-types
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
