@@ -22,13 +22,6 @@
       "options": {
         "cwd": "libs/prisma-schema-v1"
       }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/prisma-schema-v1/**/*.ts"]
-      }
     }
   }
 }
