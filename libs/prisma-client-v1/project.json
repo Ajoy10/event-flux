@@ -1,0 +1,20 @@
+{
+  "name": "prisma-client-v1",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/prisma-client-v1/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/prisma-client-v1",
+        "main": "libs/prisma-client-v1/src/index.ts",
+        "tsConfig": "libs/prisma-client-v1/tsconfig.lib.json",
+        "assets": ["libs/prisma-client-v1/*.md"]
+      }
+    }
+  },
+  "implicitDependencies": ["prisma-schema-v1"]
+}

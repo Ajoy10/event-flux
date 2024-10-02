@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@event-flux/prisma-client-v1": ["libs/prisma-client-v1/src/index.ts"],
+      "@event-flux/prisma-schema-v1": ["libs/prisma-schema-v1/src/index.ts"],
       "@event-flux/styles/*": ["libs/ui/src/styles/*"],
       "@event-flux/types": ["libs/types/src/index.ts"],
       "@event-flux/ui": ["libs/ui/src/ui/"],
