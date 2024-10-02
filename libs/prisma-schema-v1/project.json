@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "command": "npx prisma generate"
+      "command": "npx prisma generate --schema libs/prisma-schema-v1/prisma/schema.prisma"
     },
     "prisma": {
       "command": "prisma",
