@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './app/layout';
 import LoginPage from './app/pages/login';
 import SignupPage from './app/pages/signup';
+import Dashboard from './app/pages/dashboard';
+import NewEvent from './app/pages/dashboard/new';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,19 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignupPage />,
+      },
+      {
+        path: '/dashboard',
+        children: [
+          {
+            path: '/dashboard/',
+            element: <Dashboard />,
+          },
+          {
+            path: '/dashboard/new',
+            element: <NewEvent />,
+          },
+        ],
       },
     ],
   },

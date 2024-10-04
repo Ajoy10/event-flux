@@ -58,6 +58,12 @@ To add a Shadcn component, use:
 ```sh
 $env:TS_NODE_PROJECT = "tsconfig.base.json"; npx shadcn@latest add <component-name>
 ```
+
+When you want to use shared global types located at /types/**.d.ts files, in the app/lib `tsconfig.app.json` or `tsconfig.lib.json` add 
+```sh
+"include":["../../types/**/*.d.ts"]
+```
+
 In a new shell
 **_💡 Note:_** Since we're in a monorepo, we have to specify TS_NODE_PROJECT to point to the tsconfig.base.json file. Shadcn UI will look for tsconfig.json by default, but that is not available in the monorepo root.
 
