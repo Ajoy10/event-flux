@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 import { UserProfile } from '@event-flux/types';
 import axiosApi from '../../utils/axios-service';
+import { useEffect } from 'react';
 type AuthState = {
-  isAuthenticated: boolean;
+  isAuthenticated: boolean | undefined;
   profile: null | UserProfile;
 };
 
@@ -13,7 +14,7 @@ type AuthAction = {
 
 export const useAuthStore = create<AuthState & AuthAction>((set) => {
   return {
-    isAuthenticated: false,
+    isAuthenticated: undefined,
     profile: null,
     setAuthenticated: (val) => set({ isAuthenticated: val }),
     attemptLogin: async () => {
@@ -25,7 +26,7 @@ export const useAuthStore = create<AuthState & AuthAction>((set) => {
           set({ isAuthenticated: true, profile: res.data.user });
         else throw new Error('Could not find the user try logging in again');
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         set({ isAuthenticated: false });
       }
     },

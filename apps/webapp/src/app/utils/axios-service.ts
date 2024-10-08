@@ -11,8 +11,8 @@ const axiosApi = axios.create({
 axiosApi.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Handle errors globally (e.g., logging, showing notifications)
-    console.error('API error:', error);
+    // TODO: Handle errors globally (e.g., logging, showing notifications)
+    // console.error('API error:', error);
     return Promise.reject(error);
   }
 );

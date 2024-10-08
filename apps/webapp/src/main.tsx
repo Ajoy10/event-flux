@@ -2,12 +2,13 @@ import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 
 import App from './app/app';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Layout from './app/layout';
 import LoginPage from './app/pages/login';
 import SignupPage from './app/pages/signup';
 import Dashboard from './app/pages/dashboard';
 import NewEvent from './app/pages/dashboard/new';
+import DashboardLayout from './app/pages/dashboard/layout';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
+        element: <DashboardLayout />,
         children: [
           {
             path: '/dashboard/',

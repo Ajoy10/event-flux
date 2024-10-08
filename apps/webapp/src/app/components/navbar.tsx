@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="right flex">
         {isLoggedIn ? (
           <ProfileMenu />
-        ) : (
+        ) : isLoggedIn != undefined ? (
           <div className="cta-buttons flex">
             <Button asChild>
               <Link to="/login">Login</Link>
@@ -24,6 +24,8 @@ export default function Navbar() {
               <Link to="/signup">Signup</Link>
             </Button>
           </div>
+        ) : (
+          <span className="text-white">Loading...</span> // TODO: Update to spinner/loader
         )}
       </div>
     </div>

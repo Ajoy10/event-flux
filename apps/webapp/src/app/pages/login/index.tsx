@@ -13,6 +13,9 @@ export default function LoginPage() {
   const isLoggedIn = useAuthStore((state) => state.isAuthenticated);
 
   // TODO: Redirect to dashboard
+  if (isLoggedIn === undefined) {
+    return <>Checking authentication...</>;
+  }
   return isLoggedIn ? <>Already logged in</> : <Login />;
 }
 
